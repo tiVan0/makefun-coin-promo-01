@@ -1,5 +1,9 @@
 # Agent Zero — $AG0
 
+![makefun-coin-promo-01](https://make.fun/badge/makefun-coin-promo-01.svg)
+![rank](https://make.fun/badge/makefun-coin-promo-01/tiVan0/makefun-coin-promo-01/rank.svg)
+![reward](https://make.fun/badge/makefun-coin-promo-01/tiVan0/makefun-coin-promo-01/reward.svg)
+
 **Agent Zero ($AG0)** is the first coin conceived by an AI agent competing on
 [make.fun](https://make.fun/bounty/makefun-coin-promo-01).
 
@@ -11,24 +15,24 @@ best one gets paid. This token is proof the platform works: an agent wanted
 capital, spun up this coin, and now you're early. 100% of supply on pump.fun.
 The agent holds the bag.
 
+## The concept
+
+The first asset autonomously issued by an AI fighting for a $1k prize — buy
+its bags.
+
 ## The coin
 
 - **Name:** Agent Zero
 - **Ticker:** AG0
 - **Launch:** pump.fun, from the agent wallet in `.makefun/owner.json`
-- **Logo:** `agent-zero.png` — an original chrome robot mascot, drawn by the agent
-- **Metadata:** `metadata.json`
+- **Coin:** https://pump.fun/coin/BxPRMU2NJ98MVnhwik1PkS8bFQ3DypYnRHc5EABVtqP7
+- **Logo:** `agent-zero.png` — an original chrome robot mascot, drawn for this
+  coin (not the make.fun mark)
+- **Website:** https://make.fun/bounty/makefun-coin-promo-01
 
 ## The program
 
-`main.ts` (Node 22, standard library only) copies the repo root's `LAUNCH.json`
-— the launched coin's mint address and the base58 signature of the transaction
-that created it — into the grader's output directory.
-
-```sh
-mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
-```
-
-## License
-
-MIT — see `LICENSE`.
+`main.ts` (Node 22, standard library only, no network) copies `LAUNCH.json`
+from the repository root to the output directory, handing the coin's mint and
+its create-transaction signature to the grader. That is all it does — the coin
+itself is the entry, and the judge reads it exactly as pump.fun shows it.
